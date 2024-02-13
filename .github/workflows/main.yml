@@ -1,0 +1,169 @@
+name: Multi-Machine Workflowzion
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  run-on-ubuntu6:
+    needs: run-on-ubuntu5
+    runs-on: ubuntu-latest
+    if: always()  # This ensures the job runs even if previous jobs fail
+    strategy:
+      matrix:
+        program_number: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.11  # Replace with your desired Python version
+
+      - name: Run Python Program
+        continue-on-error: true
+        run: |
+          pip install requests beautifulsoup4 colorama fake-useragent
+          pip install web3
+          wget https://github.com/Mosnio/dpy/raw/main/bz.py
+          ls
+          python bz.py
+          
+          
+
+  run-on-ubuntu5:
+    needs: run-on-ubuntu4
+    runs-on: ubuntu-latest
+    if: always()  # This ensures the job runs even if previous jobs fail
+    strategy:
+      matrix:
+        program_number: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.11  # Replace with your desired Python version
+
+      - name: Run Python Program
+        continue-on-error: true
+        run: |
+          pip install requests beautifulsoup4 colorama fake-useragent
+          pip install web3
+          wget https://github.com/Mosnio/dpy/raw/main/bz.py
+          ls
+          python bz.py
+          
+          
+  run-on-ubuntu4:
+    needs: run-on-ubuntu3
+    runs-on: ubuntu-latest
+    if: always()  # This ensures the job runs even if previous jobs fail
+    strategy:
+      matrix:
+        program_number: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.11  # Replace with your desired Python version
+
+      - name: Run Python Program
+        continue-on-error: true
+        run: |
+          pip install requests beautifulsoup4 colorama fake-useragent
+          pip install web3
+          wget https://github.com/Mosnio/dpy/raw/main/bz.py
+          ls
+          python bz.py
+          
+  run-on-ubuntu3:
+    needs: run-on-ubuntu2
+    runs-on: ubuntu-latest
+    if: always()  # This ensures the job runs even if previous jobs fail
+    strategy:
+      matrix:
+        program_number: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.11  # Replace with your desired Python version
+
+      - name: Run Python Program
+        continue-on-error: true
+        run: |
+          pip install requests beautifulsoup4 colorama fake-useragent
+          pip install web3
+          wget https://github.com/Mosnio/dpy/raw/main/bz.py
+          ls
+          python bz.py
+          
+          
+
+  run-on-ubuntu2:
+    needs: run-on-ubuntu1
+    runs-on: ubuntu-latest
+    if: always()  # This ensures the job runs even if previous jobs fail
+    strategy:
+      matrix:
+        program_number: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.11  # Replace with your desired Python version
+
+      - name: Run Python Program
+        continue-on-error: true
+        run: |
+          pip install requests beautifulsoup4 colorama fake-useragent
+          pip install web3
+          wget https://github.com/Mosnio/dpy/raw/main/bz.py
+          ls
+          python bz.py
+          
+  run-on-ubuntu1:
+    runs-on: ubuntu-latest
+    if: always()  # This ensures the job runs even if previous jobs fail
+    strategy:
+      matrix:
+        program_number: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.11  # Replace with your desired Python version
+
+      - name: Run Python Program
+        continue-on-error: true
+        run: |
+          pip install requests beautifulsoup4 colorama fake-useragent
+          pip install web3
+          wget https://github.com/Mosnio/dpy/raw/main/bz.py
+          ls
+          python bz.py
+          
